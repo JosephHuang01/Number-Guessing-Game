@@ -1,3 +1,4 @@
+# Project files
 node_modules/
 dist/
 build/
@@ -5,3 +6,40 @@ build/
 .env*
 .DS_Store
 Thumbs.db
+.vscode/
+.idea/
+
+# Visual Studio / .NET generic ignores
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.env
+*.userprefs
+mono_crash.*
+
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+[Bb]in/
+[Bb]uild[Ll]og.*
+[Bb]uild/
+[Ll]og/
+[Ll]ogs/
+[Oo]bj/
+[Oo]ut/
+.vs/
+*.tmp
+*.tmp_proj
+*.pidb
+*.svclog
+*.scc
+*.coverage
+*.coveragexml
+*.trx
+
+# Python caches (safe default)
+__pycache__/
+*.pyc
