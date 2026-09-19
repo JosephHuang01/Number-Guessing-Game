@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lucky Number Challenge</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-theme="sunset">
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Mini game</p>
+          <h1>Lucky Number</h1>
+        </div>
+        <div class="best-score-card">
+          <span>Best</span>
+          <strong id="best-score-label">--</strong>
+        </div>
+      </header>
+
+      <main class="game-layout">
+        <section id="start-screen" class="panel">
+          <div class="panel-header">
+            <p class="eyebrow accent">Welcome</p>
+            <h2>Choose your game</h2>
+          </div>
+
+          <div class="menu-block">
+            <label class="section-label">Color theme</label>
+            <div class="theme-picker" aria-label="Choose screen theme">
+              <button type="button" class="theme-option active" data-theme="sunset">Sunset</button>
+              <button type="button" class="theme-option" data-theme="ocean">Ocean</button>
+              <button type="button" class="theme-option" data-theme="meadow">Meadow</button>
+              <button type="button" class="theme-option" data-theme="neon">Neon</button>
+            </div>
+          </div>
+
+          <div class="menu-block">
+            <label class="section-label">Difficulty</label>
+            <div class="difficulty-picker" aria-label="Choose difficulty level">
+              <label class="difficulty-option">
+                <input type="radio" name="difficulty" value="easy" />
+                <span>Easy</span>
+              </label>
+              <label class="difficulty-option">
+                <input type="radio" name="difficulty" value="medium" checked />
+                <span>Medium</span>
+              </label>
+              <label class="difficulty-option">
+                <input type="radio" name="difficulty" value="hard" />
+                <span>Hard</span>
+              </label>
+            </div>
+          </div>
+
+          <button id="start-game" class="primary-button" type="button">Start Playing</button>
+        </section>
+
+        <section id="game-screen" class="panel hidden">
+          <div class="status-row">
+            <div class="status-pill">
+              <span>Difficulty</span>
+              <strong id="difficulty-label">Medium</strong>
+            </div>
+            <div class="status-pill">
+              <span>Attempts</span>
+              <strong id="attempt-count">0</strong>
+            </div>
+            <div class="status-pill">
+              <span>Goal</span>
+              <strong>1 - 100</strong>
+            </div>
+          </div>
+
+          <div class="guess-display-wrap">
+            <div id="guess-display" aria-live="polite">?</div>
+          </div>
+
+          <div id="feedback-banner" class="feedback-banner" aria-live="polite">
+            Make your first guess!
+          </div>
+
+          <form id="guess-form" class="guess-form">
+            <label for="guess-input" class="sr-only">Enter your guess</label>
+            <input id="guess-input" type="number" min="1" max="100" placeholder="Pick a number" />
+            <button type="submit" class="primary-button">Guess</button>
+          </form>
+
+          <p id="limit-message" class="limit-message">You have 8 guesses.</p>
+        </section>
+
+        <section id="win-screen" class="panel hidden win-panel">
+          <p class="eyebrow accent">Round complete</p>
+          <h2>You won!</h2>
+          <p id="win-summary" class="win-summary">You guessed the hidden number in 0 tries.</p>
+          <button id="play-again-button" class="primary-button" type="button">Play Again</button>
+        </section>
+
+        <aside class="panel history-panel">
+          <div class="panel-header small">
+            <p class="eyebrow accent">Records</p>
+            <h3>Top Results</h3>
+          </div>
+          <ol id="results-list" class="results-list">
+            <li class="empty-state">No wins yet. Start your first round!</li>
+          </ol>
+        </aside>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
