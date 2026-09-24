@@ -45,19 +45,29 @@ Then open the app in a browser at:
 http://localhost:8000
 ```
 
-### 2. Deploy to GitHub Pages
+### 2. Deploy with GitHub (GitHub Pages)
 
-1. Push the project to a GitHub repository.
-2. Open the repository on GitHub.
-3. Go to Settings > Pages.
-4. Under Source, choose the main branch.
-5. Keep the folder as `/root` or `/` depending on your repository setup.
-6. Save the settings and wait for the site to publish.
+This site is a static frontend app, so GitHub Pages is the easiest way to deploy it.
 
-Your deployed site will be available at a URL like:
+1. Make sure your project is pushed to a GitHub repository.
+2. Open your repository in GitHub.
+3. Click Settings.
+4. In the left sidebar, click Pages.
+5. Under Source, choose the main branch.
+6. Keep the folder set to `/root` (or `/`) for a static site.
+7. Click Save.
+8. Wait a few moments for GitHub to build and publish the site.
+
+Your live site will appear at a URL similar to:
 
 ```text
-https://your-username.github.io/your-repository-name/
+https://your-github-username.github.io/your-repository-name/
+```
+
+For example:
+
+```text
+https://josephhuang01.github.io/Number-Guessing-Game/
 ```
 
 ### 3. Deploy to Netlify or Vercel
