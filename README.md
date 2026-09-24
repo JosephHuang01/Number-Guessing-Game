@@ -17,9 +17,65 @@ A browser-based number guessing game where the player tries to guess a random nu
 - Win/lose state tracking
 - Simple browser UI
 
-## Run the App
+## Live Demo
 
-Open the project in a browser and load the HTML file, or use a local static server if preferred.
+Once deployed, this project can be shared online at a URL like:
+
+```text
+https://your-username.github.io/number-guessing-game/
+```
+
+Replace the placeholder with your actual GitHub Pages username and repository name when you publish the site.
+
+## Deployment Instructions
+
+This project is a static website, so it can be deployed very easily on any platform that serves HTML, CSS, and JavaScript files.
+
+### 1. Run locally
+
+From the project folder, start a simple local server:
+
+```bash
+python -m http.server 8000
+```
+
+Then open the app in a browser at:
+
+```text
+http://localhost:8000
+```
+
+### 2. Deploy to GitHub Pages
+
+1. Push the project to a GitHub repository.
+2. Open the repository on GitHub.
+3. Go to Settings > Pages.
+4. Under Source, choose the main branch.
+5. Keep the folder as `/root` or `/` depending on your repository setup.
+6. Save the settings and wait for the site to publish.
+
+Your deployed site will be available at a URL like:
+
+```text
+https://your-username.github.io/your-repository-name/
+```
+
+### 3. Deploy to Netlify or Vercel
+
+1. Import the repository into Netlify or Vercel.
+2. Set the build command to none if it is a static site.
+3. Set the publish directory to the project root.
+4. Deploy the site.
+
+### 4. Other hosting options
+
+This site can also be hosted on any static hosting service such as:
+
+- GitHub Pages
+- Netlify
+- Vercel
+- Firebase Hosting
+- Azure Static Web Apps
 
 ## Notes
 
