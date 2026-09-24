@@ -13,13 +13,65 @@
           <p class="eyebrow">Mini game</p>
           <h1>Lucky Number</h1>
         </div>
-        <div class="best-score-card">
-          <span>Best</span>
-          <strong id="best-score-label">--</strong>
+        <div class="topbar-actions">
+          <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle light and dark mode">
+            Light mode
+          </button>
+          <div class="best-score-card">
+            <span>Best</span>
+            <strong id="best-score-label">--</strong>
+          </div>
         </div>
       </header>
 
-      <main class="game-layout">
+      <section class="hero-card panel">
+        <div class="hero-copy">
+          <p class="eyebrow accent">Portfolio Project</p>
+          <h2>Building practical web apps through Python, JavaScript, and AI-assisted development.</h2>
+          <p>
+            This project reflects my journey as a recent college graduate learning how to turn ideas into working software,
+            improve my problem-solving process, and use AI responsibly as a development tool.
+          </p>
+          <div class="hero-actions">
+            <button type="button" class="primary-button hero-cta" id="hero-start-button">Play the Game</button>
+            <button type="button" class="secondary-button" id="hero-code-button">Explore the Code</button>
+          </div>
+        </div>
+        <div class="hero-metrics">
+          <div class="metric-box">
+            <span>Focus</span>
+            <strong>Frontend</strong>
+          </div>
+          <div class="metric-box">
+            <span>Tools</span>
+            <strong>JavaScript</strong>
+          </div>
+          <div class="metric-box">
+            <span>Learning</span>
+            <strong>AI + Python</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="feature-grid">
+        <article class="feature-card panel">
+          <p class="eyebrow accent">Skill-building</p>
+          <h3>Core practice</h3>
+          <p>Improving JavaScript logic, UI flow, and browser-based interaction design through a small but complete project.</p>
+        </article>
+        <article class="feature-card panel">
+          <p class="eyebrow accent">AI workflow</p>
+          <h3>Prompt-driven development</h3>
+          <p>Using AI as a structured assistant to refine ideas, debug issues, and accelerate the learning process.</p>
+        </article>
+        <article class="feature-card panel">
+          <p class="eyebrow accent">Career-ready</p>
+          <h3>Portfolio thinking</h3>
+          <p>Creating polished, readable code and a clean presentation that employers can explore and understand.</p>
+        </article>
+      </section>
+
+      <main class="game-layout" id="game-area">
         <section id="start-screen" class="panel">
           <div class="panel-header">
             <p class="eyebrow accent">Welcome</p>

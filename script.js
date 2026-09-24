@@ -56,6 +56,9 @@ const state = {
 const themeButtons = document.querySelectorAll('.theme-option');
 const difficultyInputs = document.querySelectorAll('input[name="difficulty"]');
 const startGameButton = document.getElementById('start-game');
+const heroStartButton = document.getElementById('hero-start-button');
+const heroCodeButton = document.getElementById('hero-code-button');
+const themeToggleButton = document.getElementById('theme-toggle');
 const playAgainButton = document.getElementById('play-again-button');
 const startScreen = document.getElementById('start-screen');
 const gameScreen = document.getElementById('game-screen');
@@ -77,6 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
   bindEvents();
   updateTheme(state.theme);
   updateDifficulty(state.difficulty);
+  setAppearanceMode('dark');
   renderHistory();
   showMenu();
 });
@@ -99,8 +103,24 @@ function bindDifficultyInputs() {
 
 function bindEvents() {
   startGameButton.addEventListener('click', startGame);
+  heroStartButton.addEventListener('click', () => {
+    startGame();
+    document.getElementById('game-area').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+  heroCodeButton.addEventListener('click', () => {
+    document.getElementById('start-screen').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+  themeToggleButton.addEventListener('click', () => {
+    const nextMode = document.body.dataset.mode === 'light' ? 'dark' : 'light';
+    setAppearanceMode(nextMode);
+  });
   playAgainButton.addEventListener('click', startGame);
   guessForm.addEventListener('submit', handleGuessSubmit);
+}
+
+function setAppearanceMode(mode) {
+  document.body.dataset.mode = mode;
+  themeToggleButton.textContent = mode === 'dark' ? 'Light mode' : 'Dark mode';
 }
 
 function readResults() {
@@ -259,6 +279,7 @@ function finishRound() {
   winScreen.classList.remove('hidden');
 
   feedbackBanner.textContent = 'Correct';
+  triggerResultAnimation(true);
   guessDisplay.textContent = String(state.secretNumber);
   winSummary.textContent = `You guessed the hidden number in ${state.attempts} tries and finished in ${formatDuration(elapsedMs)}.`;
   guessInput.value = '';
@@ -269,9 +290,21 @@ function endRoundWithLoss() {
   gameScreen.classList.add('hidden');
   winScreen.classList.remove('hidden');
   guessDisplay.textContent = String(state.secretNumber);
+  triggerResultAnimation(false);
   winSummary.textContent = `Out of guesses! The hidden number was ${state.secretNumber}. Try again in a new round.`;
   feedbackBanner.textContent = 'Too Low';
   guessInput.value = '';
+}
+
+function triggerResultAnimation(isWin) {
+  const display = guessDisplay;
+  display.classList.remove('result-flash-win', 'result-flash-loss');
+  void display.offsetWidth;
+  display.classList.add(isWin ? 'result-flash-win' : 'result-flash-loss');
+
+  window.setTimeout(() => {
+    display.classList.remove('result-flash-win', 'result-flash-loss');
+  }, 700);
 }
 
 function getRandomNumber(min, max) {
